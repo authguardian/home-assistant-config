@@ -1,0 +1,10 @@
+---
+platform: mqtt
+name: "Network Gears"
+state_topic: "tele/network_switch/SENSOR"
+value_template: "{{ value_json['ENERGY'].Today }}"
+unit_of_measurement: "kWh"
+availability_topic: "tele/network_switch/LWT"
+icon: mdi:power-settings
+payload_available: "Online"
+payload_not_available: "Offline"

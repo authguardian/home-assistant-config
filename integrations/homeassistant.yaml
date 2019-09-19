@@ -1,0 +1,19 @@
+---
+# Sets up Home Assistant.
+#
+# Basically, everything that doesn't have to be in the
+# main configuration.yaml.
+#
+homeassistant:
+# Name of the location where Home Assistant is running
+  name: Home
+  # Location required to calculate the time the sun rises and sets
+  latitude: !secret latitude
+  longitude: !secret longitude
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: !secret zone_home_elevation
+  # metric for Metric, imperial for Imperial
+  unit_system: imperial
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: !secret time_zone
+  # Customization file

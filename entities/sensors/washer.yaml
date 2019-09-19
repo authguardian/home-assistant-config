@@ -1,0 +1,12 @@
+---
+# washer energy monitoring using Sonoff S31 outlet with custom Tasmota firmware
+#
+platform: mqtt
+name: "Washer"
+state_topic: "tele/washer/SENSOR"
+value_template: "{{ value_json['ENERGY'].Today }}"
+unit_of_measurement: "kWh"
+availability_topic: "tele/washer/LWT"
+icon: mdi:power-settings
+payload_available: "Online"
+payload_not_available: "Offline"

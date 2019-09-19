@@ -1,0 +1,6 @@
+porch_lights:
+  name: Porch Lights
+  entities:
+    - switch.mqtt_switch
+    - switch.mqtt_switch_2
+  icon: mdi:lightbulb

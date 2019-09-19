@@ -1,0 +1,17 @@
+---
+# This files integrates Garage light switch
+# switch used: https://amzn.to/2QiCHVs
+# firmware: Tasmota
+# template: {"NAME":"KULED","GPIO":[9,255,255,255,255,255,255,255,21,56,255,255,255],"FLAG":0,"BASE":18}
+#
+platform: mqtt
+name: "Kids Bedroom Ceiling Light"
+state_topic: "stat/kids1_ceiling_light/POWER"
+command_topic: "cmnd/kids1_ceiling_light/POWER"
+availability_topic: "tele/kids1_ceiling_light/LWT"
+qos: 1
+payload_on: "ON"
+payload_off: "OFF"
+payload_available: "Online"
+payload_not_available: "Offline"
+icon: mdi:ceiling-light

@@ -1,0 +1,12 @@
+---
+# water heater energy monitoring using Sonoff S31 outlet with custom Tasmota firmware
+#
+platform: mqtt
+name: "Heater"
+state_topic: "tele/heater/SENSOR"
+value_template: "{{ value_json['ENERGY'].Power }}"
+unit_of_measurement: "Watt"
+availability_topic: "tele/heater/LWT"
+icon: mdi:power-settings
+payload_available: "Online"
+payload_not_available: "Offline"
