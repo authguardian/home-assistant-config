@@ -4,9 +4,9 @@
 platform: mqtt
 name: "Heater"
 state_topic: "tele/heater/SENSOR"
-value_template: "{{ value_json['ENERGY'].Power }}"
-unit_of_measurement: "Watt"
+value_template: "{{ value_json['ENERGY'].Today }}"
+unit_of_measurement: "kWh"
 availability_topic: "tele/heater/LWT"
-icon: mdi:power-settings
+icon: mdi:water-boiler
 payload_available: "Online"
 payload_not_available: "Offline"

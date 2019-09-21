@@ -1,0 +1,15 @@
+---
+# 
+# Energy monitoring smart plug flashed with Tasmota integrated with MQTT to homeassistant
+# PLug Used: https://amzn.to/31Hd5mA
+# Tasmota Template: {"NAME":"AWP04L","GPIO":[57,255,255,131,255,134,0,0,21,17,132,56,255],"FLAG":0,"BASE":18}
+#
+platform: mqtt
+name: "Projector"
+state_topic: "tele/projector/SENSOR"
+value_template: "{{ value_json['ENERGY'].Today }}"
+unit_of_measurement: "kWh"
+availability_topic: "tele/projector/LWT"
+icon: mdi:filmstrip
+payload_available: "Online"
+payload_not_available: "Offline"

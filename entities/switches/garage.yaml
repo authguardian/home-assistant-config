@@ -2,7 +2,7 @@
 # This files integrates Garage light switch
 # switch used: https://amzn.to/2QiCHVs
 # firmware: Tasmota
-# template: {"NAME":"KULED","GPIO":[9,255,255,255,255,255,255,255,21,56,255,255,255],"FLAG":0,"BASE":18}
+# template: {"NAME":"Tonbux","GPIO":[17,255,255,255,255,0,0,0,21,56,255,0,0],"FLAG":0,"BASE":1}
 #
 platform: mqtt
 name: "Garage Lights"
