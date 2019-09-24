@@ -1,0 +1,27 @@
+---
+# This files integrates theater room dimmer
+# Dimmer used: https://amzn.to/2kSdVga
+# firmware: Tasmota
+# template: TuyaMCU Module
+# Commands: TuyaMCU 21,3
+#
+platform: mqtt
+name: "Theater Room"
+state_topic: "stat/theater_dimmer/POWER"
+command_topic: "cmnd/theater_dimmer/POWER"
+availability_topic: "tele/theater_dimmer/LWT"
+brightness_state_topic: "stat/theater_dimmer/RESULT"
+brightness_command_topic: "cmnd/theater_dimmer/Dimmer"
+brightness_scale: 100
+brightness_value_template: >
+  {% if value_json.Dimmer is defined %}
+    {{ value_json.Dimmer }}
+  {% else %}
+      {{ state_attr('light.theater_dimmer','brightness') / 255 * 100 }}
+  {% endif %}
+qos: 1
+payload_on: "ON"
+payload_off: "OFF"
+payload_available: "Online"
+payload_not_available: "Offline"
+retain: false
