@@ -1,0 +1,8 @@
+---
+#
+# The binary sensors integration for cheap window door and motion sensors
+# within Home Assistant.
+#
+# https://www.home-assistant.io/components/binary_sensor/
+#
+binary_sensor: !include_dir_list ../entities/binary_sensors

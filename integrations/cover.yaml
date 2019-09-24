@@ -3,4 +3,4 @@
 #
 # https://www.home-assistant.io/components/cover/
 #
-light: !include_dir_list ../entities/covers
+cover: !include_dir_list ../entities/covers

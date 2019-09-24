@@ -1,0 +1,14 @@
+---
+# This integrates cheap chinese 433MHz PIR sensor via Sonoff RF Bridge(Tasmota) using MQTT
+# 
+platform: mqtt
+name: 'Utility Motion'
+state_topic: 'tele/rf_sensors/RESULT'
+value_template: >-
+  {% if value_json.RfReceived.Data == '3A28A6' %}
+    {{'ON'}}
+  {% else %}
+    {{states('binary_sensor.utility_motion') | upper}}
+  {% endif %}
+off_delay: 15
+device_class: motion
