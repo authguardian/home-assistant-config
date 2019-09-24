@@ -1,0 +1,17 @@
+---
+# This files integrates Back POrch Fans light switch
+# switch used: https://amzn.to/2QiCHVs
+# firmware: Tasmota
+# template: {"NAME":"Tonbux","GPIO":[17,255,255,255,255,0,0,0,21,56,255,0,0],"FLAG":0,"BASE":1}
+#
+platform: mqtt
+name: "Front Driveaway Lights"
+state_topic: "stat/front_driveaway/POWER"
+command_topic: "cmnd/front_driveaway/POWER"
+availability_topic: "tele/front_driveaway/LWT"
+qos: 1
+payload_on: "ON"
+payload_off: "OFF"
+payload_available: "Online"
+payload_not_available: "Offline"
+icon: mdi:outdoor-lamp
