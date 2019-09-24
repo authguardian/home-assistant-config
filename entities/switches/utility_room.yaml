@@ -1,0 +1,17 @@
+---
+# This files integrates Garage light switch
+# switch used: https://amzn.to/2QiCHVs
+# firmware: Tasmota
+# template: {"NAME":"Tonbux","GPIO":[17,255,255,255,255,0,0,0,21,56,255,0,0],"FLAG":0,"BASE":1}
+#
+platform: mqtt
+name: "Utility Room"
+state_topic: "stat/utility_room/POWER"
+command_topic: "cmnd/utility_room/POWER"
+availability_topic: "tele/utility_room/LWT"
+qos: 1
+payload_on: "ON"
+payload_off: "OFF"
+payload_available: "Online"
+payload_not_available: "Offline"
+icon: mdi:ceiling-light
