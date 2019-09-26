@@ -10,3 +10,4 @@ payload_off: "OFF"
 payload_available: "Online"
 payload_not_available: "Offline"
 icon: mdi:lightbulb-on-outline
+retain: true

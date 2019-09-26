@@ -6,18 +6,13 @@
 # 433MHZ Window sensor - https://amzn.to/2lfdvkd (433Mhz sensor similar)
 
 # Sonoff sv relay NO contact soldered to Garage Door opener button switch on PCB and packed in one big box
-
 platform: mqtt
 name: "Garage"
+state_topic: "stat/garage_door_sensor/RESULT"
 command_topic: "cmnd/garage_door/POWER"
-# rf sensor state topic
-# state_topic: ""
-availability_topic: "tele/garage_door/LWT"
-qos: 0
 payload_open: "ON"
 payload_close: "ON"
 payload_stop: "ON"
-state_open: "open"
-state_closed: "closed"
-payload_available: "online"
-payload_not_available: "offline"
+state_open: "true"
+state_closed: "false"
+retain: false

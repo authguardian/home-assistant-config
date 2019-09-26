@@ -1,0 +1,13 @@
+---
+platform: mqtt
+name: 'Garage Door'
+state_topic: 'tele/rf_sensors/RESULT'
+value_template: >-
+  {% if value_json.RfReceived.Data == '021D13' %}
+    {{'ON'}}
+  {% elif value_json.RfReceived.Data == '021D19' %}
+    {{'OFF'}}
+  {% else %}
+    {{states('binary_sensor.bathroom_door') | upper}}
+  {% endif %}
+device_class: garage_door
